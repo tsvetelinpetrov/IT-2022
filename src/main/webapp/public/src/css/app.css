@@ -1,0 +1,174 @@
+html, body{
+    font-family: 'Source Serif Pro', serif;
+    background-color: #ececed;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center; /*Да се премахне*/
+}
+
+h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+a, a:visited{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #012e5e;
+}
+
+label{
+    display: inline-block;
+    margin: 8px 0;
+}
+
+form{
+    margin-block-end: 0;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    width: 50%;
+    background-color: #012e5e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main{
+    min-height: 100%;
+    position: relative;
+}
+
+nav{
+    height: 100px;
+    background-color: #012e5e;
+}
+
+footer{
+    height: 150px;
+    background-color: #012e5e;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 75%;
+    padding-bottom: 150px;
+}
+
+.panel{
+    background-color: #f2b601;
+    border-radius: 5px;
+    padding: 40px 20px 20px 20px;
+}
+
+.form-group{
+    text-align-last: center;
+}
+
+.form-control{
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    text-align-last: left;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+.form-control:focus-visible{
+    outline: #012e5e auto 1px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.m-0{
+    margin: 0;
+}
+
+.mb-0{
+    margin-bottom: 0;
+}
+
+.mt-0{
+    margin-top: 0;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.profile-info > .avatar{
+    width: 30%;
+    display: inline-block;
+    background-color: #f2b601;
+    vertical-align: top;
+}
+
+.profile-info > .bio{
+    width: 67%;
+    vertical-align: bottom;
+    display: inline-block;
+    margin-left: 2%;
+}
+
+.profile-info > .avatar > img{
+    width: 100%;
+}
+
+.card{
+    background-color: #fdfdfe;
+    border-radius: 10px;
+    padding: 40px 20px 20px 50px;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex > div{
+    flex: 1;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert.alert-danger {
+    color: #70161e;
+    background-color: #ff7884;
+    border-color: #f16c78;
+}
+
+.alert.alert-success {
+    color: #156600;
+    background-color: #95ff7a;
+    border-color: #7bdd62;
+}
