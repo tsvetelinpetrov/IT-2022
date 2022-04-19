@@ -3,6 +3,7 @@ package sit.tu_varna.bg.controllers;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import sit.tu_varna.bg.libraries.Validator;
 import sit.tu_varna.bg.models.Login;
 import sit.tu_varna.bg.models.User;
 import sit.tu_varna.bg.repositories.Repository;
@@ -42,19 +43,26 @@ public class RegistrationServlet extends HttpServlet {
             session.setAttribute("errorMessage","Двете пароли не съвпадат.");
             doGet(request, response);
         } else {
-            User user = new User(null, new Login(username, password));
-            if(repository.hasExist(user)) {
+
+            Validator validator = new Validator();
+            if(!validator.usernameValidate(username) || !validator.passwordValidate(password)) {
                 HttpSession session = request.getSession(false);
-                session.setAttribute("errorMessage","Потребителското име е заето.");
+                session.setAttribute("errorMessage","Въведените данни са невалидни.");
                 doGet(request, response);
             } else {
-                HttpSession session = request.getSession(false);
-                session.setAttribute("successMessage","Регистрацията премина успешно.");
+                User user = new User(null, new Login(username, password));
+                if(repository.hasExist(user)) {
+                    HttpSession session = request.getSession(false);
+                    session.setAttribute("errorMessage","Потребителското име е заето.");
+                    doGet(request, response);
+                } else {
+                    HttpSession session = request.getSession(false);
+                    session.setAttribute("successMessage","Регистрацията премина успешно.");
 
-                repository.addUser(user);
-                response.sendRedirect(request.getContextPath());
+                    repository.addUser(user);
+                    response.sendRedirect(request.getContextPath());
+                }
             }
         }
-
     }
 }
